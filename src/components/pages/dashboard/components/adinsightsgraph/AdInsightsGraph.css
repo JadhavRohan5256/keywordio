@@ -125,7 +125,7 @@
     align-items: center;
 }
 
-.graph-bottom-wrapper .icons{
+.graph-bottom-wrapper .icons {
     padding: 10px;
     border-radius: 30px;
     cursor: pointer;
@@ -134,6 +134,6 @@
 }
 
 
-.graph-bottom-wrapper .active{
+.graph-bottom-wrapper .active {
     background-color: var(--third-color);
 }

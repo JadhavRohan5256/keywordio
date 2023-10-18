@@ -1,11 +1,24 @@
+// import statements
 import React, { useEffect, useState } from 'react'
 import './AdInsightsGraph.css'
 import 'chart.js/auto'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable, faPieChart, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
 import { Doughnut } from 'react-chartjs-2'
 import { Chart, ArcElement } from 'chart.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTable, faPieChart} from '@fortawesome/free-solid-svg-icons'
 Chart.register([ArcElement]);
+
+// code logic start 
+const color = ['#FF6F00', '#0288D1', '#121212'];
+const options = {
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false,
+        }
+    }
+}
 
 function AdInsightsGraph() {
     const [data, setData] = useState([]);
@@ -13,7 +26,9 @@ function AdInsightsGraph() {
     const [chartData, setChartData] = useState(null);
     const [total, setTotal] = useState({});
     const [toggle, setToggle] = useState(false)
+    const [sorActive, setSortActive] = useState({ column: '', flag: true })
 
+    // initialization method 
     useEffect(() => {
         let fetchedData = [
             {
@@ -63,12 +78,13 @@ function AdInsightsGraph() {
     }, []);
 
 
+    // on change of selectedValue state 
     useEffect(() => {
         displayChart(data);
     }, [selectedValue])
 
 
-    const color = ['#FF6F00', '#0288D1', '#121212'];
+    // displaying Doughnut chart 
     const displayChart = (fetchedData) => {
         if (fetchedData <= 0) return;
         let lables = [];
@@ -85,14 +101,24 @@ function AdInsightsGraph() {
         });
     }
 
-    const options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: false,
+
+    // Sorting particular property of table based on accending and decending order 
+    const sortHandler = (column, flag) => {
+        let sortedData = data.sort((a, b) => {
+            const prop_a = a[column];
+            const prop_b = b[column];
+            if (flag) {
+                return prop_a < prop_b ? 1 : -1;
             }
-        }
+            else {
+                return prop_a > prop_b ? 1 : -1;
+            }
+        });
+
+        setData(sortedData)
+        setSortActive({ column: column, flag: flag });
     }
+
 
     return (
         <div className='graph-wrapper'>
@@ -157,18 +183,78 @@ function AdInsightsGraph() {
                                     <tr>
                                         <th>
                                             <span>Group</span>
+                                            <span>
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('group', true)}
+                                                    icon={faChevronUp}
+                                                    style={sorActive.column === 'group' && sorActive.flag && { opacity: 1 }}
+                                                />
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('group', false)}
+                                                    icon={faChevronDown}
+                                                    style={sorActive.column === 'group' && !sorActive.flag && { opacity: 1 }}
+                                                />
+                                            </span>
                                         </th>
                                         <th>
                                             <span>Clicks</span>
+                                            <span>
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('clicks', true)}
+                                                    icon={faChevronUp}
+                                                    style={sorActive.column === 'clicks' && sorActive.flag && { opacity: 1 }}
+                                                />
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('clicks', false)}
+                                                    icon={faChevronDown}
+                                                    style={sorActive.column === 'clicks' && !sorActive.flag && { opacity: 1 }}
+                                                />
+                                            </span>
                                         </th>
                                         <th>
                                             <span>Cost</span>
+                                            <span>
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('cost', true)}
+                                                    icon={faChevronUp}
+                                                    style={sorActive.column === 'cost' && sorActive.flag && { opacity: 1 }}
+                                                />
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('cost', false)}
+                                                    icon={faChevronDown}
+                                                    style={sorActive.column === 'cost' && !sorActive.flag && { opacity: 1 }}
+                                                />
+                                            </span>
                                         </th>
                                         <th>
                                             <span>Conversions</span>
+                                            <span>
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('conversions', true)}
+                                                    icon={faChevronUp}
+                                                    style={sorActive.column === 'conversions' && sorActive.flag && { opacity: 1 }}
+                                                />
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('conversions', false)}
+                                                    icon={faChevronDown}
+                                                    style={sorActive.column === 'conversions' && !sorActive.flag && { opacity: 1 }}
+                                                />
+                                            </span>
                                         </th>
                                         <th>
                                             <span>Revenue</span>
+                                            <span>
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('revenue', true)}
+                                                    icon={faChevronUp}
+                                                    style={sorActive.column === 'revenue' && sorActive.flag && { opacity: 1 }}
+                                                />
+                                                <FontAwesomeIcon
+                                                    onClick={() => sortHandler('revenue', false)}
+                                                    icon={faChevronDown}
+                                                    style={sorActive.column === 'revenue' && !sorActive.flag && { opacity: 1 }}
+                                                />
+                                            </span>
                                         </th>
                                     </tr>
                                 </thead>
@@ -208,8 +294,8 @@ function AdInsightsGraph() {
 
                 <div className='graph-bottom'>
                     <div className='graph-bottom-wrapper'>
-                        <FontAwesomeIcon icon={faPieChart} className={!toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)}/>
-                        <FontAwesomeIcon icon={faTable} className={toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)}/>
+                        <FontAwesomeIcon icon={faPieChart} className={!toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)} />
+                        <FontAwesomeIcon icon={faTable} className={toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)} />
                     </div>
                 </div>
             </div>

@@ -52,6 +52,25 @@
     font-weight: 600;
 }
 
+.table-wrapper tr th span {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-wrapper tr th span:last-of-type {
+    position: relative;
+    top: -4px;
+    left: 4px;
+}
+
+.table-wrapper tr th span .svg-inline--fa {
+    font-size: 7px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+
 .table-wrapper tr th,
 td {
     padding: 15px;
