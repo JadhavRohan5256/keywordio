@@ -1,0 +1,10 @@
+.dashboard-wrapper {
+    margin: 30px 0;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 30px;
+}

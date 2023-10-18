@@ -1,0 +1,80 @@
+.adinsights-wrapper {
+    flex: 0 0 calc(50% - 15px);
+    position: relative;
+}
+
+.adinsights {
+    box-shadow: 0px 0px 2px var(--text-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.adinsights-top {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-surface);
+    box-shadow: 0px 0px 2px var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.adinsights-top p {
+    font-weight: 600;
+}
+
+.adinsights-top span {
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 0px 2px var(--text-color);
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 0.3rem;
+    opacity: 0.6;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.table-wrapper {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 2px var(--text-color);
+    background-color: var(--bg-surface);
+    overflow: hidden;
+}
+
+.table-wrapper tr {
+    box-shadow: 0px 0px 1px var(--text-color);
+}
+
+.table-wrapper tr th {
+    font-weight: 600;
+}
+
+.table-wrapper tr th,
+td {
+    padding: 15px;
+    text-align: right;
+}
+
+.table-wrapper tr th:first-of-type,
+td:first-of-type {
+    text-align: left;
+}
+
+.table-wrapper tbody tr:last-of-type {
+    background-color: var(--bg-color);
+}
+
+.not-found td {
+    text-align: center;
+}
+
+
+.loader-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
