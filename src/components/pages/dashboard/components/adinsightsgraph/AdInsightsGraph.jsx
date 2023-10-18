@@ -3,6 +3,8 @@ import './AdInsightsGraph.css'
 import 'chart.js/auto'
 import { Doughnut } from 'react-chartjs-2'
 import { Chart, ArcElement } from 'chart.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable, faPieChart} from '@fortawesome/free-solid-svg-icons'
 Chart.register([ArcElement]);
 
 function AdInsightsGraph() {
@@ -206,8 +208,8 @@ function AdInsightsGraph() {
 
                 <div className='graph-bottom'>
                     <div className='graph-bottom-wrapper'>
-                        <span className={!toggle === true ? 'active' : null} onClick={() => setToggle(!toggle)}></span>
-                        <span className={toggle === true ? 'active' : null} onClick={() => setToggle(!toggle)}></span>
+                        <FontAwesomeIcon icon={faPieChart} className={!toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)}/>
+                        <FontAwesomeIcon icon={faTable} className={toggle === true ? 'icons active' : 'icons'} onClick={() => setToggle(!toggle)}/>
                     </div>
                 </div>
             </div>
