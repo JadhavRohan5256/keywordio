@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import statements
 import React, { useEffect, useState } from 'react'
 import './AdInsightsGraph.css'
@@ -12,12 +13,15 @@ Chart.register([ArcElement]);
 // code logic start 
 const color = ['#FF6F00', '#0288D1', '#121212'];
 const options = {
+    borderWidth: 10,
+    borderRadius: 2,
+    hoverBorderWidth: 0,
     responsive: true,
     plugins: {
         legend: {
             display: false,
         }
-    }
+    },
 }
 
 function AdInsightsGraph() {
@@ -74,7 +78,6 @@ function AdInsightsGraph() {
         setTotal(temp);
         displayChart(fetchedData);
         setData(fetchedData)
-
     }, []);
 
 
