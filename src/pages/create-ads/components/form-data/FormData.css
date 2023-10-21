@@ -1,0 +1,209 @@
+
+/* form-wrapper css start */
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.first-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-column {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+::placeholder {
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.box>label {
+    font-weight: 600;
+    font-family: var(--poppins);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+input, 
+textarea, 
+select{
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 2px var(--shadow-color);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+input:focus,
+textarea:focus,
+.box button:focus {
+    box-shadow: 0px 0px 3px var(--shadow-color);
+}
+
+.box textarea {
+    resize: none;
+    height: 118.4px;
+}
+
+.box {
+    position: relative;
+}
+
+.box button {
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 2px var(--shadow-color);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 3px;
+    background-color: transparent;
+    text-align: left;
+    color: var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box button span:first-child {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.box button .chevron {
+    color: var(--shadow-color);
+    font-weight: 300;
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.option-wrapper {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 250;
+    box-shadow: 0px 0px 2px var(--shadow-color);
+    border-radius: 3px;
+    visibility: hidden;
+}
+
+.option-wrapper.open {
+    visibility: visible;
+}
+
+.option-wrapper::-webkit-scrollbar {
+    width: 3px;
+}
+
+.option-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--third-color);
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-wrapper label {
+    width: 100%;
+    padding: 10px;
+    color: var(--shadow-color);
+    font-size: 1rem;
+}
+
+.option-wrapper label:hover {
+    background-color: var(--card-hover);
+    color: #ffffff;
+}
+
+.option-wrapper input[type="radio"] {
+    display: none;
+}
+
+.option-wrapper input[type="radio"]:checked + label {
+    background-color: var(--card-hover);
+    color: #ffffff;
+}
+
+.form-errors {
+    color: var(--error-color);
+    padding-top: 0.5rem;
+}
+
+.btn-wrapper {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    padding: 15px;
+}
+
+.back-btn {
+    box-shadow: 0px 0px 2px var(--shadow-color);
+    opacity: 1;
+}
+
+.submit-btn {
+    background-color: var(--third-color);
+    color: #ffffff;
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .form-wrapper {
+        height: 100%;
+    }
+   .two-column {
+        flex-direction: column;
+        gap: 0;
+   } 
+
+   .btn-wrapper {
+        width: 100%;
+        justify-content: space-between;
+   }
+
+   .btn-wrapper button {
+        width: 100%;
+   }
+}
+
+
+@media only screen and (max-width: 380px) {
+    
+    .btn-wrapper {
+        flex-direction: column;
+    }
+}

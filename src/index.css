@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300;1,400&family=Rubik:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200;1,300;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
 :root {
   /* fonts  */
@@ -9,7 +9,16 @@
 :root {
   --primary-color: #018786;
   --secondary-color: #BB86FC; 
-  --third-color: #42A5F5;
+  --third-color: #2196F3;
+  --card-hover: #2196f38a;
+
+  --error-bg: #f8d7da;
+	--error-color: #ff0000;
+  --error-border-color: #f5c6cb;
+	
+	--success-bg: #d4edda;
+	--success-color: #155724;
+  --success-border-color: #c3e6cb;
 }
 
 :root {
@@ -17,6 +26,7 @@
   --bg-color: #f1f1f1;
   --bg-surface: #ffffff;
   --text-color: #424242;
+  --shadow-color: rgb(118, 118, 118);
 }
 
 
@@ -32,10 +42,10 @@
 
 body {
   background-color: var(--bg-color);
-  overflow: hidden;
 }
 
-.container {
-  width: calc(100% - 60px);
-  margin: 0 auto;
+
+body::-webkit-scrollbar {
+  display: none;
 }
+

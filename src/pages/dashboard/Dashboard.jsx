@@ -6,7 +6,7 @@ import AdInsightsGraph from './components/adinsightsgraph/AdInsightsGraph'
 function Dashboard() {
   return (
     <div className='dashboard-wrapper'>
-        <div className='dashboard container'>
+        <div className='dashboard'>
             <AdInsights />
             <AdInsightsGraph />
         </div>

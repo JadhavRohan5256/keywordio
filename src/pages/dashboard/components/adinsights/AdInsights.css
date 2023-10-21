@@ -21,6 +21,7 @@
 }
 
 .adinsights-top p {
+    font-family: var(--poppins);
     font-weight: 600;
 }
 
@@ -96,4 +97,27 @@ td:first-of-type {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+@media only screen and (max-width: 650px) {
+    .adinsights-top p {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .table-wrapper {
+        font-size: 0.8rem;
+    }
+
+    .table-wrapper tr th, td {
+        padding: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 484px) {
+    .adinsights {
+        overflow-x: scroll;
+    }
 }

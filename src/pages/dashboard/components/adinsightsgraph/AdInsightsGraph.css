@@ -25,6 +25,7 @@
 }
 
 .graph-top-left p {
+    font-family: var(--poppins);
     font-weight: 600;
 }
 
@@ -38,6 +39,7 @@
 .graph-top-right select {
     width: 90px;
     padding: 3px 5px;
+    padding-right: 0px;
     border: none;
     outline: none;
     box-shadow: 0px 0px 1.5px var(--text-color);
@@ -136,4 +138,42 @@
 
 .graph-bottom-wrapper .active {
     background-color: var(--third-color);
+}
+
+
+@media only screen and (max-width: 650px) {
+    .chart-wrapper {
+        flex-direction: column;
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+    .graph-top-left p {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .graph {
+        font-size: 0.8rem;
+    }
+
+    .graph-top-right select {
+        font-size: 0.8rem;
+    }
+
+    .label-wrapper li span {
+        font-size: 0.8rem;
+    }
+
+    .table-wrapper tr th, td {
+        padding: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 484px) {
+    .adinsights {
+        overflow-x: scroll;
+    }
 }

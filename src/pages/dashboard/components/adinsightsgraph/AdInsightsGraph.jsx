@@ -12,12 +12,15 @@ Chart.register([ArcElement]);
 // code logic start 
 const color = ['#FF6F00', '#0288D1', '#121212'];
 const options = {
+    borderWidth: 10,
+    borderRadius: 2,
+    hoverBorderWidth: 0,
     responsive: true,
     plugins: {
         legend: {
             display: false,
         }
-    }
+    },
 }
 
 function AdInsightsGraph() {
