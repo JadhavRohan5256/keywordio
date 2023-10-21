@@ -147,31 +147,6 @@
     }
 }
 
-
-@media only screen and (max-width: 650px) {
-    .graph-top-left p {
-        font-weight: 600;
-        font-size: 0.9rem;
-    }
-
-    .graph {
-        font-size: 0.8rem;
-    }
-
-    .graph-top-right select {
-        font-size: 0.8rem;
-    }
-
-    .label-wrapper li span {
-        font-size: 0.8rem;
-    }
-
-    .table-wrapper tr th, td {
-        padding: 10px;
-    }
-}
-
-
 @media only screen and (max-width: 484px) {
     .adinsights {
         overflow-x: scroll;
