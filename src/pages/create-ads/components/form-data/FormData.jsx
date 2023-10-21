@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react'
+import { React, useState } from 'react'
 import './FormData.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -28,7 +28,7 @@ function FormData(props) {
         website_url: string().required("website url is required.").url("please provide valid url"),
     });
 
-    const { values, touched, errors, handleBlur, handleSubmit, handleChange} = useFormik({
+    const { values, touched, errors, handleBlur, handleSubmit, handleChange } = useFormik({
         initialValues: {
             heading_01: '',
             heading_02: '',
