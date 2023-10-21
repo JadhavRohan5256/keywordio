@@ -9,6 +9,7 @@ import { useFormik } from 'formik';
 function FormData(props) {
     const { onSubmitHandle, toggle, onSetToggle } = props;
     const [isButtonLabel, setIsButtonLabel] = useState(false)
+    const dropDownValue = ['value one', 'value two', 'value three', 'value four', 'value five', 'value six', 'value seven'] // Button Label values 
 
     let textMediaSchema = object({
         heading_01: string()
@@ -133,7 +134,7 @@ function FormData(props) {
                         </label>
                         <button type="button" onClick={() => setIsButtonLabel(!isButtonLabel)}>
                             <span>
-                                {!values.button_label ? 'Select a label that best suits your ad' : values.button_label}
+                                {!values.button_label ? 'Select a label that best suits your ad' : dropDownValue[values.button_label]}
                             </span>
                             <span className='chevron'>
                                 <FontAwesomeIcon icon={isButtonLabel ? faChevronUp : faChevronDown} />
@@ -144,73 +145,25 @@ function FormData(props) {
                             <small className="form-errors">{errors?.button_label}</small>
                         }
                         <div className={isButtonLabel === true ? 'option-wrapper open' : 'option-wrapper'}>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_01'}
-                                    id='value_01'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                                <label htmlFor="value_01" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_02'}
-                                    id='value_02'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                                <label htmlFor="value_02" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_03'}
-                                    id='value_03'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                                <label htmlFor="value_03" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_04'}
-                                    id='value_04'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                                <label htmlFor="value_04" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_05'}
-                                    id='value_05'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                                <label htmlFor="value_05" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
-                            <div className='option'>
-                                <input
-                                    type='radio'
-                                    name='button_label'
-                                    value={'value_06'}
-                                    id='value_06'
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-
-                                />
-                                <label htmlFor="value_06" onClick={() => setIsButtonLabel(!isButtonLabel)} >Select a label that best suits your ad</label>
-                            </div>
+                            {
+                                dropDownValue.map((option, idx) => {
+                                    return (
+                                        <div className='option' key={idx}>
+                                            <input
+                                                type='radio'
+                                                name='button_label'
+                                                value={idx}
+                                                id={idx}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                            />
+                                            <label htmlFor={idx} onClick={() => setIsButtonLabel(!isButtonLabel)} >
+                                                {option}
+                                            </label>
+                                         </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>
