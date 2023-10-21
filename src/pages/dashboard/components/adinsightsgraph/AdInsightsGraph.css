@@ -152,3 +152,20 @@
         overflow-x: scroll;
     }
 }
+
+@media  only screen and (max-width: 350px) {
+    .chart {
+        width: 200px;
+        height: 200px;
+    }
+
+    .label-color {
+        border-radius: 5px;
+        padding: 5px 25px;
+    }
+
+    .graph-top-right {
+        gap: 10px;
+    }
+    
+}
