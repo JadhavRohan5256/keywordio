@@ -10,9 +10,6 @@ function FormData(props) {
     const { onSubmitHandle, toggle, onSetToggle } = props;
     const [isButtonLabel, setIsButtonLabel] = useState(false)
 
-    useEffect(() => {
-        console.log('formData')
-    },[])
     let textMediaSchema = object({
         heading_01: string()
             .min(3, "the length should minimum 3")

@@ -29,13 +29,15 @@ function CreateAds() {
 
     const submitHandler = (values) => {
         if (values) {
+            const output = {...values, 'text_ad': textAd, 'media_ad': mediaAd}
+            console.log(output)
             setIsSubmit(true);
             setTimeout(() => {
                 setIsSubmit(false);
                 setToggle(false)
                 setTextAd(false)
                 setMediaAd(false);
-            }, 500)
+            }, 600)
         }
     }
 

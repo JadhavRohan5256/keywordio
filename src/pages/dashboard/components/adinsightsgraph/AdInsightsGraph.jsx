@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import statements
 import React, { useEffect, useState } from 'react'
 import './AdInsightsGraph.css'
@@ -77,7 +78,6 @@ function AdInsightsGraph() {
         setTotal(temp);
         displayChart(fetchedData);
         setData(fetchedData)
-
     }, []);
 
 
