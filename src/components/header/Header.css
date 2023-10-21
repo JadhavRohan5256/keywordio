@@ -44,3 +44,30 @@
         padding: 0px 10px;
     }
   }
+
+  @media only screen and (max-width: 360px) {
+    .nav-left .logo  {
+      font-size: 1.2rem;
+    }
+
+    .nav-right li a {
+      font-size: 0.9rem;
+    }
+  }
+
+  
+  @media only screen and (max-width: 310px) {
+    .nav-left .logo  {
+      font-size: 1.2rem;
+    }
+
+    .nav-right {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .nav-right li {
+      margin: 5px 0;
+    }
+  }
+
