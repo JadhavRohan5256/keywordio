@@ -4,7 +4,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.form-wrapper-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .two-column {
@@ -163,10 +170,8 @@ textarea:focus,
 .btn-wrapper {
     display: flex;
     gap: 15px;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    padding: 15px;
+    align-self: flex-end;
+    padding-top: 15px;
 }
 
 .back-btn {
