@@ -118,116 +118,118 @@ function AdInsights() {
               <p>Ad Insights</p>
               <span>?</span>
             </div>
-            <table className='table-wrapper'>
-              <thead>
-                <tr>
-                  <th>
-                    <span>Compaigns</span>
-                    <span>
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('compaigns', true)}
-                        icon={faChevronUp}
-                        style={sorActive.column === 'compaigns' && sorActive.flag && { opacity: 1 }}
-                      />
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('compaigns', false)}
-                        icon={faChevronDown}
-                        style={sorActive.column === 'compaigns' && !sorActive.flag && { opacity: 1 }}
-                      />
-                    </span>
-                  </th>
-                  <th>
-                    <span>Clicks</span>
-                    <span>
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('clicks', true)}
-                        icon={faChevronUp}
-                        style={sorActive.column === 'clicks' && sorActive.flag && { opacity: 1 }}
-                      />
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('clicks', false)}
-                        icon={faChevronDown}
-                        style={sorActive.column === 'clicks' && !sorActive.flag && { opacity: 1 }}
-                      />
-                    </span>
-                  </th>
-                  <th>
-                    <span>Cost</span>
-                    <span>
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('cost', true)}
-                        icon={faChevronUp}
-                        style={sorActive.column === 'cost' && sorActive.flag && { opacity: 1 }}
-                      />
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('cost', false)}
-                        icon={faChevronDown}
-                        style={sorActive.column === 'cost' && !sorActive.flag && { opacity: 1 }}
-                      />
-                    </span>
-                  </th>
-                  <th>
-                    <span>Conversions</span>
-                    <span>
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('conversions', true)}
-                        icon={faChevronUp}
-                        style={sorActive.column === 'conversions' && sorActive.flag && { opacity: 1 }}
-                      />
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('conversions', false)}
-                        icon={faChevronDown}
-                        style={sorActive.column === 'conversions' && !sorActive.flag && { opacity: 1 }}
-                      />
-                    </span>
-                  </th>
-                  <th>
-                    <span>Revenue</span>
-                    <span>
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('revenue', true)}
-                        icon={faChevronUp}
-                        style={sorActive.column === 'revenue' && sorActive.flag && { opacity: 1 }}
-                      />
-                      <FontAwesomeIcon
-                        onClick={() => sortHandler('revenue', false)}
-                        icon={faChevronDown}
-                        style={sorActive.column === 'revenue' && !sorActive.flag && { opacity: 1 }}
-                      />
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  data &&
-                  data.map((row) => {
-                    return (
-                      <tr key={row.id}>
-                        <td>{row.compaigns}</td>
-                        <td>{row.clicks}</td>
-                        <td>USD {row.cost}</td>
-                        <td>{row.conversions}</td>
-                        <td>USD {row.revenue}</td>
+            <div className='table-container'>
+              <table className='table-wrapper'>
+                <thead>
+                  <tr>
+                    <th>
+                      <span>Compaigns</span>
+                      <span>
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('compaigns', true)}
+                          icon={faChevronUp}
+                          style={sorActive.column === 'compaigns' && sorActive.flag && { opacity: 1 }}
+                        />
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('compaigns', false)}
+                          icon={faChevronDown}
+                          style={sorActive.column === 'compaigns' && !sorActive.flag && { opacity: 1 }}
+                        />
+                      </span>
+                    </th>
+                    <th>
+                      <span>Clicks</span>
+                      <span>
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('clicks', true)}
+                          icon={faChevronUp}
+                          style={sorActive.column === 'clicks' && sorActive.flag && { opacity: 1 }}
+                        />
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('clicks', false)}
+                          icon={faChevronDown}
+                          style={sorActive.column === 'clicks' && !sorActive.flag && { opacity: 1 }}
+                        />
+                      </span>
+                    </th>
+                    <th>
+                      <span>Cost</span>
+                      <span>
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('cost', true)}
+                          icon={faChevronUp}
+                          style={sorActive.column === 'cost' && sorActive.flag && { opacity: 1 }}
+                        />
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('cost', false)}
+                          icon={faChevronDown}
+                          style={sorActive.column === 'cost' && !sorActive.flag && { opacity: 1 }}
+                        />
+                      </span>
+                    </th>
+                    <th>
+                      <span>Conversions</span>
+                      <span>
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('conversions', true)}
+                          icon={faChevronUp}
+                          style={sorActive.column === 'conversions' && sorActive.flag && { opacity: 1 }}
+                        />
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('conversions', false)}
+                          icon={faChevronDown}
+                          style={sorActive.column === 'conversions' && !sorActive.flag && { opacity: 1 }}
+                        />
+                      </span>
+                    </th>
+                    <th>
+                      <span>Revenue</span>
+                      <span>
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('revenue', true)}
+                          icon={faChevronUp}
+                          style={sorActive.column === 'revenue' && sorActive.flag && { opacity: 1 }}
+                        />
+                        <FontAwesomeIcon
+                          onClick={() => sortHandler('revenue', false)}
+                          icon={faChevronDown}
+                          style={sorActive.column === 'revenue' && !sorActive.flag && { opacity: 1 }}
+                        />
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    data &&
+                    data.map((row) => {
+                      return (
+                        <tr key={row.id}>
+                          <td>{row.compaigns}</td>
+                          <td>{row.clicks}</td>
+                          <td>USD {row.cost}</td>
+                          <td>{row.conversions}</td>
+                          <td>USD {row.revenue}</td>
+                        </tr>
+                      )
+                    })
+                  }
+                  {
+                    data
+                      ? <tr>
+                        <td>Total</td>
+                        <td>{total.clicks}</td>
+                        <td>USD {total.cost}</td>
+                        <td>{total.conversions}</td>
+                        <td>USD {total.revenue}</td>
                       </tr>
-                    )
-                  })
-                }
-                {
-                  data
-                    ? <tr>
-                      <td>Total</td>
-                      <td>{total.clicks}</td>
-                      <td>USD {total.cost}</td>
-                      <td>{total.conversions}</td>
-                      <td>USD {total.revenue}</td>
-                    </tr>
-                    : <tr className='not-found'>
-                      <td colSpan="5">No Data Found</td>
-                    </tr>
-                }
-              </tbody>
-            </table>
+                      : <tr className='not-found'>
+                        <td colSpan="5">No Data Found</td>
+                      </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
           </div>
           :
           <div className='loader-wrapper'>

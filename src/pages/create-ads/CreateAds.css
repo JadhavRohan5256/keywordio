@@ -110,11 +110,11 @@
 
 @media only screen and (max-width: 600px) {
     .create-wrapper {
-        padding: 10px;
+        padding: 15px;
     }
 
     .ads-wrapper {
-        min-height: calc(100vh - 36.8px - 20px);
+        min-height: calc(100vh - 36.8px - 30px);
     }
 }
 

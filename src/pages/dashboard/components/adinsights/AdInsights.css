@@ -14,6 +14,7 @@
     height: 100%;
     background-color: var(--bg-surface);
     box-shadow: 0px 0px 2px var(--text-color);
+    margin-bottom: 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,21 +37,26 @@
     font-size: 0.9rem;
     cursor: pointer;
 }
+.table-container {
+    overflow-y: auto;
+}
 
 .table-wrapper {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0px 0px 2px var(--text-color);
     background-color: var(--bg-surface);
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .table-wrapper tr {
     box-shadow: 0px 0px 1px var(--text-color);
 }
 
-.table-wrapper tr th {
+.table-wrapper tr th span{
     font-weight: 600;
+    font-family: var(--poppins);
+    font-size: 0.9rem;
 }
 
 .table-wrapper tr th span {
@@ -101,23 +107,12 @@ td:first-of-type {
 
 
 @media only screen and (max-width: 650px) {
-    .adinsights-top p {
-        font-weight: 600;
-        font-size: 0.9rem;
+    .table-wrapper tr th {
+        min-width: 120px;
     }
 
     .table-wrapper {
-        font-size: 0.8rem;
-    }
-
-    .table-wrapper tr th, td {
-        padding: 10px;
-    }
-}
-
-
-@media only screen and (max-width: 484px) {
-    .adinsights {
         overflow-x: scroll;
     }
+
 }
