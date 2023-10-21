@@ -43,7 +43,7 @@ function CreateAds() {
 
     return (
         <div className='create-wrapper'>
-            <div className={!toggle ? 'ads-wrapper rm-pd' : 'ads-wrapper'}>
+            <div className='ads-wrapper'>
                 <p className='title'>
                     {!toggle ? 'Create Ads' : 'Create Text & Media'}
                 </p>
