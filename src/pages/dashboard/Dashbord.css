@@ -1,6 +1,6 @@
 .dashboard-wrapper {
     padding: 30px;
-    margin-top: 58.4px;
+    margin-top: 36.8px;
 }
 
 .dashboard {
@@ -12,11 +12,25 @@
 
 
 @media only screen and (max-width: 1250px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
     .dashboard-wrapper {
         padding: 15px;
     }
+    
     .dashboard {
         flex-direction: column;
         gap: 15px;
     }
+}
+
+@media only screen and (max-width: 310px) {
+    .dashboard-wrapper {
+        margin-top: 58.4px;
+    }
+    
 }
